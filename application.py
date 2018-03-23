@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import web
 from web import form
 from sklearn import svm
@@ -24,7 +26,6 @@ class index:
 		if not form.validates(): 
 			return render.formtest(form)
 		else:
-			
 			train_characteristics = eval(form['TrainCharacteristcs'].value)
 			train_labels = eval(form['TrainLabels'].value)
 			
@@ -32,7 +33,7 @@ class index:
 			c = float(form['c'].value)
 			
 			classifier = Classifier()
-
+			#return 'Olá mundo'
 			return classifier.svm_classifier(train_characteristics, train_labels, gamma, c)
 			
 class Classifier:
