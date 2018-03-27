@@ -34,7 +34,8 @@ def main():
 	
 	r = requests.post(ip, data=payload)
 	
-	clf = dill.loads(r.text)
+	clf = dill.loads(r.content)
+	print type(clf)
 
 
 if __name__ == '__main__':
