@@ -8,7 +8,7 @@ from Classifier import Classifier
 
 render = web.template.render('templates/')
 
-urls = ('/', 'Index','/gpu_usage', 'Gpu', '/train', 'Train')
+urls = ('/', 'Index','/gpu_usage', 'Gpu', '/test', 'Test')
 app = web.application(urls, globals())
 
 indexForm = form.Form( 
@@ -23,7 +23,7 @@ predictForm = form.Form(
 	form.Textbox("Model_ID"))
 
 
-class Train:
+class Test:
 	def GET(self):
 		form = predictForm()
 		return render.formtest(form)
